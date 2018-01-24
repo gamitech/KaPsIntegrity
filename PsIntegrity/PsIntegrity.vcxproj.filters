@@ -27,7 +27,7 @@
     <ClInclude Include="PsUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PslntegrityDefs.h">
+    <ClInclude Include="PsIntegrityDefs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
