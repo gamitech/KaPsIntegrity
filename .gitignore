@@ -12,6 +12,11 @@
 *.pch
 *.ipch
 .vs
+*.user
+
+# Directories to ignore
+x64
+
 
 # Compiled Dynamic libraries
 *.so
