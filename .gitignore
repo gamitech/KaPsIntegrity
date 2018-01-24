@@ -10,11 +10,14 @@
 # Precompiled Headers
 *.gch
 *.pch
+*.ipch
+.vs
 
 # Compiled Dynamic libraries
 *.so
 *.dylib
 *.dll
+*.db
 
 # Fortran module files
 *.mod

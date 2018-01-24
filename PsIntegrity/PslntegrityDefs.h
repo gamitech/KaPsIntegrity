@@ -1,0 +1,42 @@
+#pragma once
+
+#define MAX_INTEGRITY_LEVELS 5
+
+// The LABEL_SECURITY_INFORMATION SDDL SACL to be set
+#define UNTRUSTED_INTEGRITY_SDDL_SACL_W L"S:(ML;;NW;;;)"
+#define LOW_INTEGRITY_SDDL_SACL_W L"S:(ML;;NW;;;LW)"
+#define MEDIUM_INTEGRITY_SDDL_SACL_W L"S:(ML;;NW;;;ME)"
+#define HIGH_INTEGRITY_SDDL_SACL_W L"S:(ML;;NW;;;HI)"
+#define SYSTEM_INTEGRITY_SDDL_SACL_W L"S:(ML;;NW;;;SI)"
+
+#define PS_INTEGRITY_SID_UNTRUSTED	L"S-1-16-0"
+#define PS_INTEGRITY_SID_LOW		L"S-1-16-4096"
+#define PS_INTEGRITY_SID_MEDIUM		L"S-1-16-8192"
+#define PS_INTEGRITY_SID_HIGH		L"S-1-16-12288"
+#define PS_INTEGRITY_SID_SYSTEM		L"S-1-16-16384"
+
+
+#define KA_DEFAULT_MANDATORY_LABEL_SID_ACCOUNT_NAME L"Mandatory Label\\Medium Mandatory Label"
+#define KA_DEFAULT_MANDATORY_LABEL_POLICY_MASK SYSTEM_MANDATORY_LABEL_NO_WRITE_UP | SYSTEM_MANDATORY_LABEL_NO_READ_UP
+
+static SID_IDENTIFIER_AUTHORITY LabelAuth = SECURITY_MANDATORY_LABEL_AUTHORITY;
+
+typedef enum _KA_OBJECT_INTEGRITY
+{
+	ObjectIntegrityNone,
+	ObjectIntegrityUntrusted,
+	ObjectIntegrityLow,
+	ObjectIntegrityMedium,
+	ObjectIntegrityHigh,
+	ObjectIntegritySystem,
+	ObjectIntegrityMax
+}KA_OBJECT_INTEGRITY, *PKA_OBJECT_INTEGRITY;
+
+typedef enum _KA_PS_OPERATION
+{
+	OperationNone,
+	OperationQuery,
+	OperationSet,
+	OperationCreateProcess,
+	OperationCount
+}KA_PS_OPERATION, *PKA_PS_OPERATION;
